@@ -11,6 +11,7 @@ import com.google.ai.client.generativeai.GenerativeModel
 import dev.tabansi.ai.bloom.sample.gemini.starter.SummarizeRoute
 import dev.tabansi.ai.bloom.sample.gemini.starter.SummarizeViewModel
 import dev.tabansi.ai.bloom.sample.palm.SamplePalmChatUi
+import dev.tabansi.ai.bloom.sample.singleChat.ChatScreen
 import dev.tabansi.ai.bloom.ui.theme.BloomTheme
 
 class MainActivity : ComponentActivity() {
@@ -23,12 +24,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    val generativeModel = GenerativeModel(
-                        modelName = "gemini-pro",
-                        apiKey = BuildConfig.API_KEY
-                    )
-                    val viewModel = SummarizeViewModel(generativeModel)
-                    SummarizeRoute(viewModel)
+                    ChatScreen()
                 }
             }
         }
